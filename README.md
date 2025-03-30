@@ -49,10 +49,12 @@ Mas caso queira inserir mais dados, deixarei o endpoint e forma de inserir os da
 
 ### Exemplos de Endpoints
 
-- **GET http://localhost:8585/api/v1/health-plan-operators Retorna uma lista paginada de planos de saúde
-- **GET http://localhost:8585/api/v1/health-plan-operators/{id} Retorna um plano de saúde pelo ID
-- **POST http://localhost:8585/api/v1/health-plan-operators/reports Insere os dados no banco de dados os planos de saúde atualizados.
-- **POST http;//localhost:8585/api/v1/financial-statements Insere os dados das despesas de planos de saúde, os anos especificados via body, na base de dados.
+http://localhost:8585/api/v1
+
+- **GET /health-plan-operators Retorna uma lista paginada de planos de saúde
+- **GET /health-plan-operators/{id} Retorna um plano de saúde pelo ID
+- **POST /health-plan-operators/reports Insere os dados no banco de dados os planos de saúde atualizados.
+- **POST /financial-statements Insere os dados das despesas de planos de saúde, os anos especificados via body, na base de dados.
 ```
 {
     "years": ["2024", "2023"]
