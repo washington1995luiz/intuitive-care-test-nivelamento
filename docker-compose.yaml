@@ -1,0 +1,54 @@
+services:
+  intuitive_backend_app:
+    container_name: intuitive-backend-application
+    image: washington1995luiz/intuitive-backend-application
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8585:8585"
+    environment:
+      - DB_HOST=intuitive_db_postgres
+      - DB_PORT=5432
+      - DB_NAME=db_intuitive
+      - DB_USER=root
+      - DB_PASSWORD=12345
+    networks:
+      intuitive_network:
+    depends_on:
+      - intuitive_db_postgres
+    restart: always
+
+  intuitive_db_postgres:
+    container_name: intuitive-db-postgres
+    image: postgres:17.4-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: root
+      POSTGRES_DB: db_intuitive
+    ports:
+      - "5433:5432"
+    volumes:
+      - intuitive_db:/var/lib/postgresql/data
+    networks:
+      intuitive_network:
+  
+  intuitive_frontend_app:
+    image: washington1995luiz/intuitive-frontend-application
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - intuitive_backend_app
+    restart: always
+    ports:
+      - "9000:80"
+    networks:
+      intuitive_network:
+
+volumes:
+  intuitive_db:
+
+networks:
+  intuitive_network:

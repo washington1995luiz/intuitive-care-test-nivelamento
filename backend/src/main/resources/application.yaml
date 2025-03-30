@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: intuitive-care-test
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:db_intuitive}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:12345}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  threads:
+    virtual:
+      enabled: true
+server:
+  port: ${SERVER_PORT:8585}
+path:
+  downloads: ../intuitive-downloads
+
+test-three:
+  site: ${WEBSITE_FINANCIAL_STATEMENTS_TARGET:https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/}
+  sql:
+    tb-financial-statements: 'INSERT INTO tb_demonstracoes_contabeis (reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final, data) VALUES (?, ?, ?, ?, ?, ?)'
+    tb-health-plan-operators: 'INSERT INTO tb_operadoras_plano_saude_ativas (registro_ans, cnpj, razao_social, nome_fantasia, modalidade, logradouro, numero, complemento, bairro, cidade, uf, cep, ddd, telefone, fax, endereco_eletronico, representante, cargo_representante, regiao_de_comercializacao, data_registro_ans) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+scraping:
+  site: ${WEBSITE_TARGET:https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos}
+websites:
+  financial-statements: ${WEBSITE_FINANCIAL_STATEMENTS_TARGET:https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/}
