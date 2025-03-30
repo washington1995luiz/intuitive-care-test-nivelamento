@@ -1,7 +1,7 @@
 services:
   intuitive_backend_app:
     container_name: intuitive-backend-application
-    image: washington1995luiz/intuitive-backend-application
+    image: intuitive-backend-application
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -35,7 +35,7 @@ services:
       intuitive_network:
   
   intuitive_frontend_app:
-    image: washington1995luiz/intuitive-frontend-application
+    image: intuitive-frontend-application
     build:
       context: ./frontend
       dockerfile: Dockerfile

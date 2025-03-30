@@ -42,14 +42,17 @@ Ao iniciar o projeto, já vai baixar automaticamente os arquivos .zip do desafio
 Não será necessário fazer nova chamada para incluir no banco de dados os dados dos últimos dois anos pedido no teste de nivelamento.
 Mas caso queira inserir mais dados, deixarei o endpoint e forma de inserir os dados abaixo na parte de exemplos de endpoint.
 
+## Endpoints Backend
+
+#### Swagger
+- **GET http://localhost:8585/swagger-ui/index.html Swagger UI
 
 ### Exemplos de Endpoints
 
-- **GET /[swagger-ui/index.html](http://localhost:8585/swagger-ui/index.html) Retorna a documentação do Swagger
-- **GET /[health-plan-operators](http://localhost:8585/api/v1/health-plan-operators) Retorna uma lista paginada de planos de saúde
-- **GET /[health-plan-operators-id](http://localhost:8585/api/v1/health-plan-operators/{id}) Retorna um plano de saúde pelo ID
-- **POST /[health-plan-operators-download](http://localhost:8585/api/v1/health-plan-operators/reports) Insere os dados no banco de dados os planos de saúde atualizados.
-- **POST /[financial-statements-download](http;//localhost:8585/api/v1/financial-statements) Insere os dados das despesas de planos de saúde, os anos especificados via body, na base de dados.
+- **GET http://localhost:8585/api/v1/health-plan-operators Retorna uma lista paginada de planos de saúde
+- **GET http://localhost:8585/api/v1/health-plan-operators/{id} Retorna um plano de saúde pelo ID
+- **POST http://localhost:8585/api/v1/health-plan-operators/reports Insere os dados no banco de dados os planos de saúde atualizados.
+- **POST http;//localhost:8585/api/v1/financial-statements Insere os dados das despesas de planos de saúde, os anos especificados via body, na base de dados.
 ```
 {
     "years": ["2024", "2023"]
