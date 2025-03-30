@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "649ef078-9f92-425c-93f6-27b2b34d852b",
+		"name": "API TESTES DE NIVELAMENTO",
+		"description": "Esta aplicação tem o objetivo de simular os desafios do teste de nivelamento da Intuitive Care.\n\nContact Support:\n Name: Washington Luiz\n Email: washington1995luiz@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6024716"
+	},
+	"item": [
+		{
+			"name": "api/v1",
+			"item": [
+				{
+					"name": "health-plan-operators",
+					"item": [
+						{
+							"name": "find All 1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/health-plan-operators?city=<string>&state=<string>&telephone=<string>&modality=<string>&ddd=<string>&ansRegistration=<string>&page=<integer>&size=<integer>&sort=[\"<string>\",\"<string>\"]",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"health-plan-operators"
+									],
+									"query": [
+										{
+											"key": "city",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "state",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "telephone",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "modality",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "ddd",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "ansRegistration",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "size",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "sort",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/health-plan-operators?city=<string>&state=<string>&telephone=<string>&modality=<string>&ddd=<string>&ansRegistration=<string>&page=<integer>&size=<integer>&sort=<string>,<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health-plan-operators"
+											],
+											"query": [
+												{
+													"key": "city",
+													"value": "<string>"
+												},
+												{
+													"key": "state",
+													"value": "<string>"
+												},
+												{
+													"key": "telephone",
+													"value": "<string>"
+												},
+												{
+													"key": "modality",
+													"value": "<string>"
+												},
+												{
+													"key": "ddd",
+													"value": "<string>"
+												},
+												{
+													"key": "ansRegistration",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "<integer>"
+												},
+												{
+													"key": "size",
+													"value": "<integer>"
+												},
+												{
+													"key": "sort",
+													"value": "<string>,<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"content\": [\n    {\n      \"id\": \"<uuid>\",\n      \"registro_ans\": \"<string>\",\n      \"cnpj\": \"<string>\",\n      \"razao_social\": \"<string>\",\n      \"nome_fantasia\": \"<string>\",\n      \"modalidade\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"uf\": \"<string>\",\n      \"ddd\": \"<string>\",\n      \"telefone\": \"<string>\",\n      \"endereco_eletronico\": \"<string>\",\n      \"data_registro_ans\": \"<date>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"registro_ans\": \"<string>\",\n      \"cnpj\": \"<string>\",\n      \"razao_social\": \"<string>\",\n      \"nome_fantasia\": \"<string>\",\n      \"modalidade\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"uf\": \"<string>\",\n      \"ddd\": \"<string>\",\n      \"telefone\": \"<string>\",\n      \"endereco_eletronico\": \"<string>\",\n      \"data_registro_ans\": \"<date>\"\n    }\n  ],\n  \"page\": {\n    \"size\": \"<long>\",\n    \"number\": \"<long>\",\n    \"totalElements\": \"<long>\",\n    \"totalPages\": \"<long>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "download Report",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/health-plan-operators/reports",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"health-plan-operators",
+										"reports"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/health-plan-operators/reports",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health-plan-operators",
+												"reports"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/health-plan-operators/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"health-plan-operators",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/health-plan-operators/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health-plan-operators",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"registro_ans\": \"<string>\",\n  \"cnpj\": \"<string>\",\n  \"razao_social\": \"<string>\",\n  \"nome_fantasia\": \"<string>\",\n  \"modalidade\": \"<string>\",\n  \"logradouro\": \"<string>\",\n  \"numero\": \"<string>\",\n  \"complemento\": \"<string>\",\n  \"bairro\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"uf\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"ddd\": \"<string>\",\n  \"telefone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"endereco_eletronico\": \"<string>\",\n  \"representante\": \"<string>\",\n  \"cargo_representante\": \"<string>\",\n  \"regiao_de_comercializacao\": \"<string>\",\n  \"data_registro_ans\": \"<date>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "find Top10Operators With The Highest Expenses Latest Year",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/health-plan-operators/top-10-expenses-latest-year",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"health-plan-operators",
+										"top-10-expenses-latest-year"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/health-plan-operators/top-10-expenses-latest-year",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health-plan-operators",
+												"top-10-expenses-latest-year"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"registro_ans\": \"<string>\",\n    \"nome_fantasia\": \"<string>\",\n    \"razao-social\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"despesas_totais\": \"<number>\",\n    \"data\": \"<date>\"\n  },\n  {\n    \"registro_ans\": \"<string>\",\n    \"nome_fantasia\": \"<string>\",\n    \"razao-social\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"despesas_totais\": \"<number>\",\n    \"data\": \"<date>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "find Top10Operators With The Highest Expenses Latest Quarter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/health-plan-operators/top-10-expenses-latest-quarter",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"health-plan-operators",
+										"top-10-expenses-latest-quarter"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/health-plan-operators/top-10-expenses-latest-quarter",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health-plan-operators",
+												"top-10-expenses-latest-quarter"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"registro_ans\": \"<string>\",\n    \"nome_fantasia\": \"<string>\",\n    \"razao-social\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"despesas_totais\": \"<number>\",\n    \"data\": \"<date>\"\n  },\n  {\n    \"registro_ans\": \"<string>\",\n    \"nome_fantasia\": \"<string>\",\n    \"razao-social\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"despesas_totais\": \"<number>\",\n    \"data\": \"<date>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "financial-statements",
+					"item": [
+						{
+							"name": "find All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/financial-statements?ansRegistration=<string>&cdAccountingAccount=<string>&description=<string>&initialBalanceValue=<string>&finalBalanceValue=<string>&date=<string>&page=<integer>&size=<integer>&sort=[\"<string>\",\"<string>\"]",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"financial-statements"
+									],
+									"query": [
+										{
+											"key": "ansRegistration",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "cdAccountingAccount",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "description",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "initialBalanceValue",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "finalBalanceValue",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "date",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "size",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "sort",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/financial-statements?ansRegistration=<string>&cdAccountingAccount=<string>&description=<string>&initialBalanceValue=<string>&finalBalanceValue=<string>&date=<string>&page=<integer>&size=<integer>&sort=<string>,<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"financial-statements"
+											],
+											"query": [
+												{
+													"key": "ansRegistration",
+													"value": "<string>"
+												},
+												{
+													"key": "cdAccountingAccount",
+													"value": "<string>"
+												},
+												{
+													"key": "description",
+													"value": "<string>"
+												},
+												{
+													"key": "initialBalanceValue",
+													"value": "<string>"
+												},
+												{
+													"key": "finalBalanceValue",
+													"value": "<string>"
+												},
+												{
+													"key": "date",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "<integer>"
+												},
+												{
+													"key": "size",
+													"value": "<integer>"
+												},
+												{
+													"key": "sort",
+													"value": "<string>,<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"content\": [\n    {\n      \"id\": \"<uuid>\",\n      \"registro_ans\": \"<string>\",\n      \"codigo_conta_contabil\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"balanco_saldo_inicial\": \"<number>\",\n      \"balanco_saldo_final\": \"<number>\",\n      \"data\": \"<date>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"registro_ans\": \"<string>\",\n      \"codigo_conta_contabil\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"balanco_saldo_inicial\": \"<number>\",\n      \"balanco_saldo_final\": \"<number>\",\n      \"data\": \"<date>\"\n    }\n  ],\n  \"page\": {\n    \"size\": \"<long>\",\n    \"number\": \"<long>\",\n    \"totalElements\": \"<long>\",\n    \"totalPages\": \"<long>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "download",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"years\": [\"2024\", \"2023\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/financial-statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"financial-statements"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"years\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/financial-statements",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"financial-statements"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "find By Id 1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/financial-statements/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"financial-statements",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/financial-statements/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"financial-statements",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"registro_ans\": \"<string>\",\n  \"codigo_conta_contabil\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"balanco_saldo_inicial\": \"<number>\",\n  \"balanco_saldo_final\": \"<number>\",\n  \"data\": \"<date>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "transform",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/challenge-two",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"challenge-two"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/challenge-two",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"challenge-two"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				},
+				{
+					"name": "download 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/challenge-one",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"challenge-one"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/challenge-one",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"challenge-one"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8585",
+			"type": "string"
+		}
+	]
+}
