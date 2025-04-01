@@ -34,7 +34,7 @@ public class FinancialStatementsServiceImpl implements FinancialStatementsServic
     private final WebScrapingService webScrapingService;
     private final ZipService zipService;
 
-    @Cacheable(value = "financial-statements-all")
+
     @Override
     public void downloadFinancialStatements(RequestFinancialStatementsByYears statementsByYears) {
         statementsByYears.years().stream()
@@ -50,7 +50,8 @@ public class FinancialStatementsServiceImpl implements FinancialStatementsServic
                 });
         log.info("Completed");
     }
-
+    
+    @Cacheable(value = "financial-statements-all")
     @Override
     public Page<FinancialStatementsResponse> findAll(FinancialStatementsFilter filter, Pageable pageable) {
         try{
