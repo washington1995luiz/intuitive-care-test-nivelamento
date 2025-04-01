@@ -51,6 +51,7 @@ public class FinancialStatementsServiceImpl implements FinancialStatementsServic
         log.info("Completed");
     }
     
+    
     @Cacheable(value = "financial-statements-all")
     @Override
     public Page<FinancialStatementsResponse> findAll(FinancialStatementsFilter filter, Pageable pageable) {
